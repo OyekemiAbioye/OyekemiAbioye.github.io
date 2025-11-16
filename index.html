@@ -4,105 +4,329 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oyekemi Abioye | Data Scientist & Responsible AI Advocate</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#003366', // Deep Navy Blue
+                        'accent-gold': '#FACC15',  // A warm, accessible gold
+                        'light-bg': '#F7F9FC',     // Off-white light background
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom style for the subtle scroll-margin and separator -->
+    <style>
+        html { scroll-behavior: smooth; }
+        section { scroll-margin-top: 80px; } /* Space for fixed header */
+        .separator {
+            border-top: 1px solid #E5E7EB; /* Light gray separator line */
+            margin: 4rem auto;
+            width: 90%;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-white text-gray-800 font-sans antialiased">
 
-    <header id="navbar">
-        <nav class="container">
-            <a href="#hero" class="logo">[Your Initials]</a>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#approach">Approach</a></li>
-                <li><a href="#projects">Case Studies</a></li>
-                <li><a href="#contact">Contact</a></li>
+    <!-- 1. NAVIGATION -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 bg-white shadow-lg z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-extrabold text-primary-blue tracking-wide">
+                Oyekemi Abioye
+            </a>
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex space-x-8 text-lg font-medium">
+                <li><a href="#about" class="hover:text-accent-gold transition duration-300">About</a></li>
+                <li><a href="#approach" class="hover:text-accent-gold transition duration-300">Approach</a></li>
+                <li><a href="#blog" class="hover:text-accent-gold transition duration-300">Blog</a></li>
+                <li><a href="#projects" class="hover:text-accent-gold transition duration-300">Projects</a></li>
+                <li><a href="#contact" class="hover:text-accent-gold transition duration-300">Contact</a></li>
             </ul>
+            <!-- Mobile Menu Placeholder (Not functional, but indicates design intent) -->
+            <button class="md:hidden text-primary-blue text-2xl focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
         </nav>
     </header>
 
-    <section id="hero" class="hero-section">
-        <div class="container">
-            <h1>[Oyekemi Abioye]</h1>
-            <h2>Data Scientist | Responsible AI Advocate</h2>
-            <p>Building ethical, transparent, and robust AI systems that drive genuine, positive impact.</p>
-            <div class="cta-group">
-                <a href="#projects" class="button primary">View Case Studies</a>
-                <a href="resume.pdf" class="button secondary" target="_blank">Download Resume </a>
+    <main class="pt-20">
+        <!-- 2. HERO SECTION -->
+        <section id="hero" class="py-24 md:py-32 bg-light-bg text-center">
+            <div class="max-w-3xl mx-auto px-4">
+                <h1 class="text-5xl md:text-7xl font-extrabold text-primary-blue mb-4 leading-tight">
+                    Building Trust in AI Systems.
+                </h1>
+                <h2 class="text-xl md:text-2xl text-gray-600 mb-8 font-light">
+                    Oyekemi Abioye | Data Scientist & Responsible AI Advocate
+                </h2>
+                <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
+                    Developing machine learning solutions with a strong emphasis on ethical considerations.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#projects" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-lg shadow-lg text-primary-blue bg-accent-gold hover:bg-yellow-500 transition duration-300 transform hover:scale-105">
+                        View Projects
+                    </a>
+                    <a href="https://1drv.ms/b/c/1300075dc50f16b9/EbkWD8VdBwAggBPT2QEAAAABzhIIskwBkTmSHSW_lOPOtw?e=P9ngov" target="_blank" class="inline-flex items-center justify-center px-8 py-3 border-2 border-primary-blue text-base font-medium rounded-lg text-primary-blue hover:bg-primary-blue hover:text-white transition duration-300">
+                        See Resume
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
-
-    <hr>
-
-    <section id="about" class="about-section container">
-        <h3>👋 Hi, I'm Oyekemi </h3>
-        <div class="about-content">
-            <p>My journey in data science has focused on leveraging advanced machine learning techniques (NLP, Time Series, Deep Learning) to solve complex business problems. However, my drive is to specialize in **Responsible AI**, ensuring that our technological advancements are fair, unbiased, and compliant.</p>
-            <p>I am passionate about implementing **Fairness, Accountability, and Transparency (FAT)** principles from the data acquisition phase to model deployment, bridging the gap between innovation and ethical governance.</p>
-        </div>
-    </section>
-
-    <hr>
-
-    <section id="approach" class="approach-section container">
-        <h3>⚙️ My Approach: A Framework for Ethical ML</h3>
-        <div class="approach-grid">
-            <div class="approach-card">
-                <h4>1. Data Bias Audit</h4>
-                <p>Proactive assessment of data collection methods and features to mitigate systemic bias before model training, crucial for sensitive applications.</p>
-            </div>
-            <div class="approach-card">
-                <h4>2. Model Explainability (XAI)</h4>
-                <p>Prioritizing interpretable models and utilizing tools like SHAP/LIME to provide **human-understandable rationales** for every decision, supporting the 'right to explanation'.</p>
-            </div>
-            <div class="approach-card">
-                <h4>3. Fairness Testing & Remediation</h4>
-                <p>Employing libraries like Fairlearn and AIF360 to rigorously test for disparate impact across various demographic and protected groups.</p>
-            </div>
-            <div class="skills-list">
-                <h4>Key Technologies & Tools</h4>
-                <ul>
-                    <li>**Languages:** Python (Pandas, Scikit-learn, PyTorch), R, SQL</li>
-                    <li>**Responsible AI:** Fairlearn, AIF360, SHAP, LIME, InterpretML</li>
-                    <li>**Platforms:** AWS SageMaker, GCP Vertex AI, MLflow, Docker</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <hr>
-
-    <section id="projects" class="projects-section container">
-        <h3>🔬 Featured Case Studies</h3>
-        <p class="subtitle">Detailed narratives structured around **Problem, Ethical Challenge, Solution, and Impact.**</p>
-
-        <article class="case-study-card">
-            <h4>Case Study: Explainable AI for Credit Risk</h4>
-            <div class="project-details">
-                <p>**The Challenge:** Previous models were black-box, leading to high appeal rates and difficulty proving non-discriminatory decisions.</p>
-                <p>**My Solution:** Implemented a **Generalized Additive Model (GAM)** for intrinsic interpretability, supplemented by SHAP analysis for localized explanations.</p>
-                <p>**The Impact:** Achieved target accuracy while reducing fairness variance (e.g., between age groups) by 15%, aligning with regulatory guidelines.</p>
-                <a href="case-study-1.html" class="button small">Read Full Case Study →</a>
-            </div>
-        </article>
         </section>
 
-    <hr>
+        <div class="separator"></div>
 
-    <footer id="contact">
-        <div class="container">
-            <h3>Let's Connect</h3>
-            <p>Open to discussions on Data Science, Data Governance, Responsible AI.</p>
-            <p>Email: <a href="mailto:oyekemiabioye@icloud.com">hello@[YourDomain].com</a></p>
-            <div class="social-links">
-                <a href="#"><img src="linkedin-icon.svg" alt="LinkedIn"></a>
-                <a href="#"><img src="github-icon.svg" alt="GitHub"></a>
-                <a href="#">Medium/Blog</a>
+        <!-- 3. ABOUT SECTION -->
+        <section id="about" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+            <h3 class="text-4xl font-extrabold text-primary-blue mb-8 text-center">
+                👋 About Me
+            </h3>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h4 class="text-2xl font-bold text-gray-700 mb-4">My Focus: Ethical & Transparent AI/ML</h4>
+                    <p class="text-gray-600 mb-4">
+                        My work encompasses advanced machine learning and Responsible AI. My technical expertise spans Machine learning modelling, Natural Language Processing, application of LLMs, and operationalization of Responsible AI principles. My approach involves embedding Fairness, Accountability, Transparency, and Reliability directly into the ML lifecycle, ensuring that systems are not only high-performing but also safe, compliant, and aligned with organizational and regulatory expectations.
+                    </p>
+                    <p class="text-gray-600">
+                        I am driven by the challenge of turning ethical AI principles into practical workflows that scale. Whether I am building cloud-ready architectures, leading NLP initiatives with LLMs, designing model monitoring frameworks, or partnering with governance and risk teams, I aim to ensure every solution is transparent, explainable, and built for impact.
+                    </p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl shadow-inner">
+                    <h4 class="text-2xl font-bold text-gray-700 mb-4 flex items-center">
+                        <span class="mr-3 text-accent-gold">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                        </span>
+                        Key Skills & Tools
+                    </h4>
+                    <ul class="list-disc list-inside space-y-2 text-gray-600 ml-4">
+                        <li>Data Science & AI: Machine Learning, Statistical Modelling, Anomaly Detection, A/B Testing, Natural Language Processing, Transformers, Python, SQL, Spark, MLOps</li>
+                        <li>Responsible AI: Fairlearn, SHAP, LIME</li>
+                        <li>Platforms: AzureML, MLflow, Databricks,</li>
+                        <li>Data Viz: Power BI, Matplotlib for explainability dashboards</li>
+                        <li>Project Management: Git, Version Controlling, Azure DevOps, Strategic Planning, Process & Resource Management, Agile/Scrum framework</li>
+                    </ul>
+                </div>
+                <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h3 class="text-4xl font-extrabold text-primary-blue mb-10">
+                </h3>
+                <div class="flex justify-center mb-8">
+                    <!-- Placeholder for the professional headshot -->
+                    <img
+                        src="https://1drv.ms/i/c/1300075dc50f16b9/EbkWD8VdBwAggBOj1gEAAAABeRMNjZksupOFN9-UtzMmmw?e=YhWqrV"
+                        alt="Oyekemi's Professional Headshot"
+                        class="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full shadow-2xl border-4 border-accent-gold"
+                        onerror="this.onerror=null;this.src='https://placehold.co/300x300/333/fff?text=Photo+Error';"
+                    >
+                </div>
+
             </div>
-            <p class="copyright">© 2024 [Your Name]. Handcrafted for Clarity and Ethics.</p>
-        </div>
-    </footer>
+        </section>
 
+        <div class="separator"></div>
+
+        <!-- 4. METHODOLOGY / APPROACH SECTION -->
+        <section id="approach" class="bg-light-bg py-16 md:py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h3 class="text-4xl font-extrabold text-primary-blue mb-12 text-center">
+                    My Structured Approach to Responsible AI Implementation
+                </h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Step 1 -->
+                    <div class="p-6 bg-white rounded-xl shadow-lg border-t-4 border-primary-blue hover:shadow-xl transition duration-300">
+                        <h4 class="text-xl font-bold text-primary-blue mb-3">1. Robust De-Identification & Privacy Safeguards</h4>
+                        <p class="text-gray-600">
+                            Systematic removal, masking, or transformation of personally identifiable information (PII) throughout the data lifecycle. This ensures models are trained and evaluated on privacy-preserving datasets, maintaining regulatory compliance and protecting user confidentiality without compromising model performance.
+                        </p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="p-6 bg-white rounded-xl shadow-lg border-t-4 border-primary-blue hover:shadow-xl transition duration-300">
+                        <h4 class="text-xl font-bold text-primary-blue mb-3">2. Proactive Bias Audit</h4>
+                        <p class="text-gray-600">
+                            Rigorous pre-training assessment of data sources and features. Focus on identifying and mitigating systemic bias early, long before the model sees production data.
+                        </p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="p-6 bg-white rounded-xl shadow-lg border-t-4 border-primary-blue hover:shadow-xl transition duration-300">
+                        <h4 class="text-xl font-bold text-primary-blue mb-3">3. XAI Implementation</h4>
+                        <p class="text-gray-600">
+                            Utilizing SHAP and LIME for local and global model interpretability. This ensures full transparency and supports the "right to explanation" for all stakeholders.
+                        </p>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="p-6 bg-white rounded-xl shadow-lg border-t-4 border-primary-blue hover:shadow-xl transition duration-300">
+                        <h4 class="text-xl font-bold text-primary-blue mb-3">4. Continuous Fairness Testing</h4>
+                        <p class="text-gray-600">
+                            Establishing automated pipelines to monitor for disparate impact and equity metrics across sensitive groups post-deployment, allowing for timely remediation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="separator"></div>
+
+         <!-- 5. BLOG SECTION (Simplified CTA) -->
+        <section id="blog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 text-center">
+            <div class="max-w-3xl mx-auto p-8 rounded-xl shadow-lg border border-gray-100">
+                <h3 class="text-4xl font-extrabold text-primary-blue mb-6">
+                    ✍️ Read My Latest Thoughts
+                </h3>
+                <p class="text-xl text-gray-600 mb-10">
+                    Find my articles, technical guides, and commentary on Data Science, AI Ethics and Governance.
+                </p>
+                <a href="https://medium.com/@oyekemiabioye" target="_blank" class="inline-flex items-center justify-center px-10 py-4 text-lg font-bold rounded-lg shadow-xl text-primary-blue bg-accent-gold hover:bg-yellow-500 transition duration-300 transform hover:scale-105">
+                    Visit My Blog 
+                </a>
+            </div>
+        </section>
+
+        <div class="separator"></div>
+
+        <!-- 5. BLOG SECTION -->
+               <!-- <section id="blog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+            <h3 class="text-4xl font-extrabold text-primary-blue mb-4 text-center">
+                ✍️ Latest Thoughts on Data Science & Responsible AI
+            </h3>
+            <p class="text-lg text-gray-500 mb-12 text-center max-w-3xl mx-auto">
+                I share technical lessons, commentary, and best practices related to data science, AI ethics and governance on my Medium page.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                 Blog Post 1 - Links to Medium 
+                <a href="https://medium.com/@oyekemiabioye" target="_blank" class="block p-6 bg-white rounded-xl shadow-lg border border-gray-100 hover:shadow-xl hover:border-accent-gold transition duration-300">
+                    <span class="text-sm font-semibold text-gray-500 mb-2 block">Data Storytelli | Sep 2024</span>
+                    <h4 class="text-xl font-bold text-primary-blue mb-2">
+                        From Data to Action: The Timeless Power of Storytelling
+                    </h4>
+                    <p class="text-gray-600 line-clamp-3">
+                        As regulations like the EU AI Act solidify, the role of the AI Auditor moves from theoretical concept to operational necessity. This post breaks down the core functions and required skill sets.
+                    </p>
+                    <span class="mt-4 text-accent-gold font-medium inline-block">Read on Medium →</span>
+                </a>
+                 Blog Post 2 - Links to Medium
+                <a href="https://medium.com/@alexchenrai" target="_blank" class="block p-6 bg-white rounded-xl shadow-lg border border-gray-100 hover:shadow-xl hover:border-accent-gold transition duration-300">
+                    <span class="text-sm font-semibold text-gray-500 mb-2 block">Fairness | Aug 2024</span>
+                    <h4 class="text-xl font-bold text-primary-blue mb-2">
+                        Beyond Demographic Parity: Selecting the Right Fairness Metric
+                    </h4>
+                    <p class="text-gray-600 line-clamp-3">
+                        Different business objectives require different fairness metrics. I review Equality of Opportunity, Equalized Odds, and how to justify your choice to a non-technical team.
+                    </p>
+                    <span class="mt-4 text-accent-gold font-medium inline-block">Read on Medium →</span>
+                </a>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="https://medium.com/@alexchenrai" target="_blank" class="inline-flex items-center justify-center px-8 py-3 border-2 border-primary-blue text-base font-medium rounded-lg text-primary-blue hover:bg-primary-blue hover:text-white transition duration-300 transform hover:scale-105">
+                    Visit All Posts on Medium
+                </a>
+            </div>
+        </section>
+
+        <div class="separator"></div> -->
+        
+        <!-- 6. CASE STUDIES SECTION -->
+        <section id="projects" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+            <h3 class="text-4xl font-extrabold text-primary-blue mb-4 text-center">
+                🔬 Featured Projects
+            </h3>
+            <p class="text-lg text-gray-500 mb-12 text-center">
+                Detailed narratives structured around the problem, ethical challenge, solution, and quantifiable impact.
+            </p>
+
+            <div class="space-y-12">
+                <!-- Case Study 1: Healthcare PHI -->
+                <article class="bg-white p-8 md:p-10 rounded-xl shadow-2xl border-l-8 border-accent-gold transform hover:scale-[1.01] transition duration-300">
+                    <h4 class="text-3xl font-bold text-primary-blue mb-4">
+                        Explainable AI for Credit Risk Decisions
+                    </h4>
+                    <span class="inline-block bg-primary-blue text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">HEALTHCARE | DE-IDENTIFICATION</span>
+                    <div class="text-lg space-y-4">
+                        <p>
+                            The Challenge: A healthcare organization needed to safely leverage case notes for analytics and model development, but the raw text contained extensive PHI/PII, including names, dates, locations, and medical identifiers. Manual redaction was impossible and not scalable due to the volume of the reports, creating compliance risks under HIPAA and PHIPA, and blocking downstream AI/ML initiatives.
+                        </p>
+                        <p>
+                            The Solution: I built an automated NLP-driven de-identification pipeline combining regex patterning, Named Entity Recognition (NER) using transformer models, and context-aware scoring to accurately detect and mask sensitive entities. The pipeline included a two-stage hybrid approach: deterministic rules for structured PHI and ML models for contextual PHI. To ensure enterprise readiness, I integrated confidence-threshold tuning, audit logs, and customizable redaction policies for different data-sharing use cases.
+                        </p>
+                        <p>
+                            The Impact: Delivered 97%+ entity-level recall across 12 PHI categories while reducing false positives. Enabled safe, compliant data access and cut de-identification time from weeks to minutes, unlocking faster model development cycles and secure cross-team data sharing.
+                        </p>
+                        <!--<a href="#" class="block text-primary-blue font-semibold mt-4 hover:text-accent-gold">
+                            View Detailed Case Study → -->
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Case Study 2: NLP/Hiring -->
+                <article class="bg-white p-8 md:p-10 rounded-xl shadow-2xl border-l-8 border-accent-gold transform hover:scale-[1.01] transition duration-300">
+                    <h4 class="text-3xl font-bold text-primary-blue mb-4">
+                        Explainable AI for Credit Risk Decisions
+                    </h4>
+                    <span class="inline-block bg-primary-blue text-white text-xs font-semibold px-3 py-1 rounded-full mb-4">FINTECH | XAI</span>
+                    <div class="text-lg space-y-4">
+                        <p>
+                            The Challenge: The existing credit decisioning workflow relied on a legacy scorecard with limited predictive power and no explainability framework, creating compliance friction and inconsistent lending decisions. As the product scaled, rising default rates signaled the need for a more accurate and transparent model to support digital loan applications.
+                        </p>
+                        <p>
+                            The Solution: I managed the end-to-end development of a modern credit scoring model, replacing the legacy system with an interpretable architecture using Generalized Additive Models (GAMs). To strengthen transparency, I integrated SHAP-based explanations directly into the decision pipeline, enabling compliance-ready adverse action reasons and clearer customer communication. The full workflow included feature engineering, bias and drift monitoring, and governance controls to meet regulatory standards.
+                        </p>
+                        <p>
+                            The Impact: The new credit scoring system reduced non-performing loans by 8.5% in the first year, improved decision consistency, and lowered manual review workloads. It also introduced a clear, defensible reasoning framework that strengthened trust across risk, compliance, and product teams.
+                        </p>
+                        <!--<a href="#" class="block text-primary-blue font-semibold mt-4 hover:text-accent-gold">
+                            View Detailed Case Study → -->
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <div class="separator"></div>
+
+        <!-- 6. CONTACT / FOOTER -->
+        <footer id="contact" class="bg-primary-blue text-white py-16 md:py-20">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h3 class="text-4xl font-extrabold text-white mb-4">
+                    Let's Collaborate
+                </h3>
+                <p class="text-xl font-light text-gray-300 mb-8">
+                    I am actively seeking consulting opportunities focused on Responsible AI, Data Governance, and impactful ML/AI development.
+                </p>
+
+                <p class="text-2xl font-semibold mb-6">
+                    <a href="mailto:oyekemiabioye@icloud.com" class="text-accent-gold hover:text-yellow-300 transition duration-300">
+                        oyekemiabioye@icloud.com
+                    </a>
+                </p>
+
+                <div class="social-links flex justify-center space-x-6 mt-8">
+                    <!-- LinkedIn Icon (Using inline SVG for a clean look) -->
+                    <a href="https://www.linkedin.com/in/oyekemiabioye/" target="_blank" class="text-white hover:text-accent-gold transition duration-300">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.754 0-.964.784-1.75 1.75-1.75s1.75.786 1.75 1.75c0 .964-.783 1.754-1.75 1.754zm13.5 12.268h-3v-5.604c0-3.368-4-3.568-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                    <!-- GitHub Icon 
+                    <a href="https://github.com/alexchenrai" target="_blank" class="text-white hover:text-accent-gold transition duration-300">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12 0C5.372 0 0 5.372 0 12c0 5.303 3.438 9.8 8.207 11.387.6.11.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.04-1.61-4.04-1.61-.546-1.385-1.332-1.754-1.332-1.754-1.085-.74.082-.725.082-.725 1.205.085 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.49.997.108-.775.419-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.236-3.22-.124-.303-.536-1.52.117-3.178 0 0 1.008-.322 3.301 1.234.957-.266 1.983-.4 3.003-.404 1.02.004 2.046.138 3.003.404 2.29-1.556 3.297-1.234 3.297-1.234.654 1.658.242 2.875.118 3.178.77.84 1.232 1.91 1.232 3.22 0 4.608-2.805 5.625-5.474 5.925.43.37.817 1.125.817 2.27 0 1.64-.015 2.96-.015 3.37c0 .318.216.694.825.576C20.565 21.79 24 17.304 24 12c0-6.628-5.372-12-12-12z" clip-rule="evenodd"/></svg>
+                    </a> -->
+                    <!-- Blog/Medium Icon -->
+                    <a href="https://medium.com/@oyekemiabioye" target="_blank" class="text-white hover:text-accent-gold transition duration-300 text-sm font-semibold p-1 rounded">
+                        Medium/Blog
+                    </a>
+                </div>
+
+                <p class="text-sm text-gray-400 mt-10">
+                    © 2024 Oyekemi Abioye. For Clarity and Ethics.
+                </p>
+            </div>
+        </footer>
+    </main>
 </body>
 </html>
